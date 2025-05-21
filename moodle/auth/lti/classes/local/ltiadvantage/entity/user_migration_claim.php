@@ -71,7 +71,8 @@ class user_migration_claim {
         if (empty($claim['oauth_consumer_key_sign'])) {
             throw new \coding_exception("Missing 'oauth_consumer_key_sign' property in lti1p1 migration claim.");
         }
-
+ 
+        
         if (!$this->verify_signature(
             $claim['oauth_consumer_key'],
             $claim['oauth_consumer_key_sign'],
